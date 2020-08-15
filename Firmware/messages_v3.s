@@ -650,7 +650,7 @@ _BPMSG1226_str:
 	.section .text.BPMSG1227, code
 	.global _BPMSG1227_str
 _BPMSG1227_str:
-	.pasciz "GND\t3.3V\t5.0V\tADC\tVPU\tAUX\t"
+	.pasciz "GND\t5.0V\t3.3V\tVPU\tADC\tAUX\t"
 
 	; BPMSG1228
 	.section .text.BPMSG1228, code
@@ -920,7 +920,7 @@ _MSG_1WIRE_NO_DEVICE_DETECTED_str:
 	.section .text.MSG_1WIRE_PINS_STATE, code
 	.global _MSG_1WIRE_PINS_STATE_str
 _MSG_1WIRE_PINS_STATE_str:
-	.pasciz "-\tOWD\t-\t-"
+	.pasciz "-\t-\t-\tOWD"
 
 	; MSG_1WIRE_READ_ROM_MACRO_NAME
 	.section .text.MSG_1WIRE_READ_ROM_MACRO_NAME, code
@@ -1082,7 +1082,7 @@ _MSG_I2C_MODE_IDENTIFIER_str:
 	.section .text.MSG_I2C_PINS_STATE, code
 	.global _MSG_I2C_PINS_STATE_str
 _MSG_I2C_PINS_STATE_str:
-	.pasciz "SCL\tSDA\t-\t-"
+	.pasciz "-\t-\tSCL\tSDA"
 
 	; MSG_I2C_READ_ADDRESS_END
 	.section .text.MSG_I2C_READ_ADDRESS_END, code
@@ -1250,7 +1250,7 @@ _MSG_PIC_NO_READ_str:
 	.section .text.MSG_PIC_PINS_STATE, code
 	.global _MSG_PIC_PINS_STATE_str
 _MSG_PIC_PINS_STATE_str:
-	.pasciz "PGC\tPGD\t-\t-"
+	.pasciz "-\t-\tPGC\tPGD"
 
 	; MSG_PIC_REVISION_ID
 	.section .text.MSG_PIC_REVISION_ID, code
@@ -1478,7 +1478,7 @@ _MSG_SPI_MODE_IDENTIFIER_str:
 	.section .text.MSG_SPI_PINS_STATE, code
 	.global _MSG_SPI_PINS_STATE_str
 _MSG_SPI_PINS_STATE_str:
-	.pasciz "CLK\tMOSI\tCS\tMISO"
+	.pasciz "CS\tMISO\tCLK\tMOSI"
 
 	; MSG_SPI_POLARITY_PROMPT
 	.section .text.MSG_SPI_POLARITY_PROMPT, code
@@ -1610,7 +1610,7 @@ _MSG_UART_PARITY_ERROR_str:
 	.section .text.MSG_UART_PINS_STATE, code
 	.global _MSG_UART_PINS_STATE_str
 _MSG_UART_PINS_STATE_str:
-	.pasciz "-\tTxD\t-\tRxD"
+	.pasciz "-\tRxD\t-\tTxD"
 
 	; MSG_UART_POLARITY_PROMPT
 	.section .text.MSG_UART_POLARITY_PROMPT, code

@@ -1748,10 +1748,10 @@ void print_pins_information(void) {
   print_pin_direction(MOSI);
 #else
   print_pin_direction(AUX);
+  print_pin_direction(CS);
+  print_pin_direction(MISO);  
   print_pin_direction(CLK);
   print_pin_direction(MOSI);
-  print_pin_direction(CS);
-  print_pin_direction(MISO);
 #endif /* BUSPIRATEV4 */
   bpBR;
   BPMSG1234; // bpWstring("GND\t");
@@ -1763,7 +1763,7 @@ void print_pins_information(void) {
 #if defined(BP_VERSION2_SUPPORT) && (BP_VERSION2_SUPPORT == 1)
   bp_write_voltage(bp_read_adc(BP_ADC_PROBE));
 #else
-  bp_write_voltage(bp_read_adc(BP_ADC_3V3));
+  bp_write_voltage(bp_read_adc(BP_ADC_5V0));
 #endif /* BP_VERSION2_SUPPORT && (BP_VERSION2_SUPPORT == 1) */
 #endif /* BUSPIRATEV4 */
   MSG_VOLTAGE_UNIT;
@@ -1772,7 +1772,7 @@ void print_pins_information(void) {
 #ifdef BUSPIRATEV4
   bp_write_voltage(bp_read_adc(BP_ADC_3V3));
 #else
-  bp_write_voltage(bp_read_adc(BP_ADC_5V0));
+  bp_write_voltage(bp_read_adc(BP_ADC_3V3));
 #endif /* BUSPIRATEV4 */
   MSG_VOLTAGE_UNIT;
   user_serial_transmit_character('\t');
@@ -1783,7 +1783,7 @@ void print_pins_information(void) {
 #if defined(BP_VERSION2_SUPPORT) && (BP_VERSION2_SUPPORT == 1)
   bp_write_voltage(bp_read_adc(BP_ADC_3V3));
 #else
-  bp_write_voltage(bp_read_adc(BP_ADC_PROBE));
+  bp_write_voltage(bp_read_adc(BP_ADC_VPU));
 #endif /* BP_VERSION2_SUPPORT && (BP_VERSION2_SUPPORT == 1) */
 #endif /* BUSPIRATEV4 */
   MSG_VOLTAGE_UNIT;
@@ -1792,7 +1792,7 @@ void print_pins_information(void) {
 #ifdef BUSPIRATEV4
   bp_write_voltage(bp_read_adc(BP_ADC_PROBE));
 #else
-  bp_write_voltage(bp_read_adc(BP_ADC_VPU));
+  bp_write_voltage(bp_read_adc(BP_ADC_PROBE));
 #endif /* BUSPIRATEV4 */
   MSG_VOLTAGE_UNIT;
   user_serial_transmit_character('\t');
@@ -1809,10 +1809,10 @@ void print_pins_information(void) {
   print_pin_state(MOSI);
 #else
   print_pin_state(AUX);
-  print_pin_state(CLK);
-  print_pin_state(MOSI);
   print_pin_state(CS);
   print_pin_state(MISO);
+  print_pin_state(CLK);
+  print_pin_state(MOSI);
 #endif /* BUSPIRATEV4 */
   bpBR;
 }
